@@ -1,6 +1,16 @@
-import Button from './button';
+import ReactDOM from 'react-dom';
+import React from 'react';
+import Icon from './icon/icon';
 
-const a = 1
-console.log('hi')
+const fn: React.MouseEventHandler = (e) => {
+  console.log(e.target);
+};
 
-export {Button, a};
+ReactDOM.render(<div>
+  <Icon name="ctrip"
+        onClick={fn}
+        onMouseEnter={() => console.log('enter')}
+        onMouseLeave={() => console.log('leave')}
+        onTouchStart={() => console.log('touch')}
+  />
+</div>, document.querySelector('#root'));
